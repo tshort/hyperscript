@@ -126,3 +126,4 @@
   }
   return pargs.join()
 }
+Here is a #h("a#exit.external[href='https://example.com']", "link").

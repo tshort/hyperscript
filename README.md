@@ -17,6 +17,8 @@ Note that `html.elem` doesn't have a way to pass in raw strings. Everything is e
 Here are examples:
 
 ```typst
+#import "@preview/hyperscript:0.1.0": *
+
 #h("#hello")
 // <div id="hello"></div>
 
@@ -25,9 +27,6 @@ Here are examples:
 
 #h("input[type=text][placeholder=Name]")
 // <input type="text" placeholder="Name" />
-
-#h("a#exit.external[href='https://example.com']", "Leave")
-// <a id="exit" class="external" href="https://example.com">Leave</a>
 
 #h(".fancy-list#mylist")[
   - one

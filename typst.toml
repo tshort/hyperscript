@@ -7,4 +7,4 @@ repository = "https://github.com/tshort/hyperscript"
 license = "MIT"
 keywords = ["html"]
 categories = ["components"]
-description = "Hyperscript-style HTML creation utility"
+description = "Hyperscript-style HTML creation for Typst"
