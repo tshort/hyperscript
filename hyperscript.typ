@@ -17,7 +17,7 @@
     } 
     if m.captures.at(0) == none {
       let s = m.captures.at(2)   // key=val
-      let mm = s.match(regex("(\w*)='?([^']*)'?"))
+      let mm = s.match(regex("\[?(\w*)='?([^']*)'?\]"))
       if mm != none {
         attrs.insert(mm.captures.at(0), mm.captures.at(1))
       }
@@ -57,3 +57,4 @@
   }
   return pargs.join()
 }
+
