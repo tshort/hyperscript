@@ -28,7 +28,7 @@ Here are examples:
 #h("input[type=text][placeholder=Name]")
 // <input type="text" placeholder="Name" />
 
-#h(".myclass", (placeholder="one"))[hello *world*]
+#h(".myclass", (placeholder: "one"))[hello *world*]
 // <div class="myclass" placeholder="one">hello <strong>world</strong></div>
 
 Here's a link: #h("a#exit.external[href='https://example.com']", "Leave")
