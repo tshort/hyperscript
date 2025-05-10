@@ -51,3 +51,5 @@ Here's a link: #h("a#exit.external[href='https://example.com']", "Leave")
 ```
 
 This approach is based on [Mithril](https://mithril.js.org/hyperscript.html). Related work includes [hyperscript](https://github.com/hyperhype/hyperscript).
+
+[This](https://arthurclemens.github.io/mithril-template-converter/index.html) is a useful tool to convert HTML to hyperscript format.
