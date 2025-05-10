@@ -48,3 +48,7 @@ Here are examples:
 
 
 This approach is based on [hyperscript (JavaScript)](https://github.com/hyperhype/hyperscript). [Mithril](https://mithril.js.org/hyperscript.html) is also a nice JavaScript package with hyperscript-style HTML generation.
+
+## Limitations
+
+The parsing of the CSS selector is still crude. You cannot include "." or "#" or "[" inside strings within an attribute. For example, `m("a#exit.external[href='https://example.com']", "Leave")` won't work.
