@@ -9,9 +9,9 @@
 * `attributes` (optional dictionary) -- Attributes for the HTML tag.
 * `content` -- Content enclosed by the tag. Can be strings or content.
 
-`selector` has the format "name.class1.class2#id[attr1=something][attr2=else]". All of the components are optional. If "name" is left out, "div" is assumed. One or more classes can be provided. The `class` and `id` are merged into `attributes`.
+`selector` has the format "name.class1.class2#id[attr1=something][attr2=else]". All of the components are optional. If "name" is left out, "div" is assumed. One or more classes can be provided. All classes and the id are merged into `attributes`.
 
-Note that `html.elem` doesn't have a way to pass in raw strings. Everything is encoded for HTML. Be careful with `<script>` tags, particularly `<`.
+Note that `html.elem` doesn't have a way to pass in raw strings. Everything is encoded for HTML. Be careful with `<script>` tags, particularly text that includes "<".
 
 `hyperscript` also provides `hc` which is a method wrapped in a context that checks that the target is HTML.
 
