@@ -1,4 +1,5 @@
-# `hyperscript` — Create HTML with CSS-style selectors
+# `hyperscript`
+### Create HTML in Typst with CSS-style selectors
 
 `hyperscript` provides the `h` function that is a convenience wrapper for `html.elem`.
 
