@@ -28,6 +28,9 @@ Here are examples:
 #h("input[type=text][placeholder=Name]")
 // <input type="text" placeholder="Name" />
 
+#h(".myclass", (placeholder="one"))[hello *world*]
+// <div class="myclass" placeholder="one">hello <strong>world</strong></div>
+
 #h(".fancy-list#mylist")[
   - one
   - two
