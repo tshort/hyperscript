@@ -1,28 +1,27 @@
 #let parse-selector(s) = {
-  s = s.replace(" ", "")
-  let r = regex("[\.#\[\]]")
-  let splits = s.split(r)
-  let types = s.matches(r).map(x => x.text)
-  let tag = splits.remove(0)
-  if tag == "" {
-    tag = "div"
-  }
+ 
+  let tag = "div"
   let classes = ()
-  let attrs = (:)
   let id = ""
-  for (typ, split) in types.zip(splits) {
-    if typ == "." {
-      classes.push(split)
+  let attrs = (:)
+  let r = regex("(?:(^|#|\.)([^#.\[\]]+))|(\[(.+?)(?:\s*=\s*(['\"])(?:\\[\"'\]]|.)*?)?\])")
+  for m in s.matches(r) {
+    if m.captures.at(0) == "" {
+      tag = m.captures.at(1)
     } 
-    if typ == "#" {
-      id = split
+    if m.captures.at(0) == "." {
+      classes.push(m.captures.at(1))
     } 
-    if typ == "[" {
-      let kv = split.split("=")
-      if kv.len() > 1 {
-        attrs.insert(kv.at(0), kv.at(1))
+    if m.captures.at(0) == "#" {
+      id = m.captures.at(1)
+    } 
+    if m.captures.at(0) == none {
+      let s = m.captures.at(2)   // key=val
+      let mm = s.match(regex("(\w*)='?([^']*)'?"))
+      if mm != none {
+        attrs.insert(mm.captures.at(0), mm.captures.at(1))
       }
-    }
+    } 
   }
   let class = (..classes, attrs.at("class", default: "")).join(" ").trim()
   if class != "" {
